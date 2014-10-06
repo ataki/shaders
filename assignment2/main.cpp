@@ -61,7 +61,7 @@ STTriangleMesh* gManualTriangleMesh = 0;
 
 void resetCamera()
 {
-    mCameraTranslation = STVector3(0.f, 0.f, 15.f);
+    mCameraTranslation = STVector3(0.f, 1.5f, 14.5f);
     mCameraAzimuth = 0.f;
     mCameraElevation = 65.0f;
 }

@@ -1,5 +1,5 @@
 # Blender MTL File: 'scene.blend'
-# Material Count: 9
+# Material Count: 8
 
 newmtl Material.000
 Ns 27.450980
@@ -29,17 +29,6 @@ Ks 0.500000 0.500000 0.500000
 Ni 1.000000
 d 1.000000
 illum 2
-
-newmtl Material.005
-Ns 92.156863
-Ka 0.000000 0.000000 0.000000
-Kd 0.640000 0.640000 0.640000
-Ks 0.250000 0.250000 0.250000
-Ni 1.000000
-d 1.000000
-illum 2
-map_Kd SnowTerrain/SkyDome-Cloud-Overcast-MidMorning.png
-map_d SnowTerrain/SkyDome-Cloud-Overcast-MidMorning.png
 
 newmtl None
 Ns 96.078431
