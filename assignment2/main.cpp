@@ -42,7 +42,7 @@ float lightPosition1[] = {15.0f, 0.0f, 0.0f, 1.0f};
 static float materialAmbient[]  = { 0.2, 0.2, 0.6, 1.0 };
 static float materialDiffuse[]  = { 0.2, 0.2, 0.6, 1.0 };
 static float materialSpecular[] = { 0.8, 0.8, 0.8, 1.0 };
-static float shininess          = 18.0;  // # between 1 and 128.
+static float shininess          =  18.0;  // # between 1 and 128.
 
 STShaderProgram *shader;
 
