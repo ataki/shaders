@@ -23,6 +23,7 @@ void main()
         vec3 materialDiffuse = gl_FrontMaterial.diffuse.xyz;
         vec3 materialSpecular  = gl_FrontMaterial.specular.xyz;
         float shininess    = gl_FrontMaterial.shininess;
+//        printf ("shininess: %f", shininess);
         
         /* CS 148 TODO: Implement the Phong reflectance model here */
         vec3 Lm = normalize(lightSourcePos-modelPos);

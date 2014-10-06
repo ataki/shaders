@@ -25,24 +25,23 @@ std::string fragmentShader;
 std::string meshOBJ;
 
 // Light source attributes
-
 static float specularLight[] = {1.00, 1.00, 1.00, 1.0};
-static float ambientLight[]  = {1.10, 0.10, 0.10, 1.0};
-static float diffuseLight[]  = {1.00, 1.00, 1.00, 1.0};
+static float ambientLight[]  = {.54, .53, .79, 1.0};
+static float diffuseLight[]  = {.01, .01, .01, 1.0};
 
 // Light source attributes
 static float specularLight1[] = {1.0f, 0.0f, 0.0f, 1.0f};
-static float ambientLight1[]  = {1.0f, 0.0f, 0.0f, 1.0f};
-static float diffuseLight1[]  = {1.0f, 0.0f, 0.0f, 1.0f};
+static float ambientLight1[]  = {.2, .2, .2, 1.0};
+static float diffuseLight1[]  = {.75f, .75f, .75f, 1.0f};
 
-float lightPosition[] = {10.0f, 15.0f, 10.0f, 1.0f};
-float lightPosition1[] = {15.0f, 0.0f, 0.0f, 1.0f};
+float lightPosition[] = {5.0f, 10.0f, 5.0f, 1.0f};
+float lightPosition1[] = {15.0f, 10.0f, -20.0f, 1.0f};
 
 // Material color properties
-static float materialAmbient[]  = { 0.2, 0.2, 0.6, 1.0 };
-static float materialDiffuse[]  = { 0.2, 0.2, 0.6, 1.0 };
-static float materialSpecular[] = { 0.8, 0.8, 0.8, 1.0 };
-static float shininess          =  18.0;  // # between 1 and 128.
+static float materialSpecular[] = { 0., 0.5, 0., 1.0 };
+static float materialAmbient[]  = { 0.75, 0.75, 0.75, 1.0 };
+static float materialDiffuse[]  = { 0.75, 0.75, 0.75, 1.0 };
+static float shininess          =  2.0;  // # between 1 and 128.
 
 STShaderProgram *shader;
 
@@ -53,7 +52,7 @@ int gMouseButton = -1;
 STVector3 mCameraTranslation;
 float mCameraAzimuth;
 float mCameraElevation;
-bool mesh = false; // draw mesh
+bool mesh = true; // draw mesh
 bool smooth = false; // smooth/flat shading for mesh
 
 STTriangleMesh* gTriangleMesh = 0;
@@ -61,7 +60,7 @@ STTriangleMesh* gManualTriangleMesh = 0;
 
 void resetCamera()
 {
-    mCameraTranslation = STVector3(0.f, 1.5f, 14.5f);
+    mCameraTranslation = STVector3(0.f, 1.2f, 14.5f);
     mCameraAzimuth = 0.f;
     mCameraElevation = 65.0f;
 }
@@ -190,7 +189,7 @@ void DisplayCallback()
     // shader programs on anything we draw.
     shader->Bind();
 
-    if(mesh)
+    if (mesh)
         gTriangleMesh->Draw(smooth);
     else
         gManualTriangleMesh->Draw(smooth);
