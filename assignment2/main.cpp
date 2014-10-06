@@ -25,17 +25,24 @@ std::string fragmentShader;
 std::string meshOBJ;
 
 // Light source attributes
+
 static float specularLight[] = {1.00, 1.00, 1.00, 1.0};
-static float ambientLight[]  = {0.10, 0.10, 0.10, 1.0};
+static float ambientLight[]  = {1.10, 0.10, 0.10, 1.0};
 static float diffuseLight[]  = {1.00, 1.00, 1.00, 1.0};
 
+// Light source attributes
+static float specularLight1[] = {1.0f, 0.0f, 0.0f, 1.0f};
+static float ambientLight1[]  = {1.0f, 0.0f, 0.0f, 1.0f};
+static float diffuseLight1[]  = {1.0f, 0.0f, 0.0f, 1.0f};
+
 float lightPosition[] = {10.0f, 15.0f, 10.0f, 1.0f};
+float lightPosition1[] = {15.0f, 0.0f, 0.0f, 1.0f};
 
 // Material color properties
 static float materialAmbient[]  = { 0.2, 0.2, 0.6, 1.0 };
 static float materialDiffuse[]  = { 0.2, 0.2, 0.6, 1.0 };
 static float materialSpecular[] = { 0.8, 0.8, 0.8, 1.0 };
-static float shininess          = 8.0;  // # between 1 and 128.
+static float shininess          = 18.0;  // # between 1 and 128.
 
 STShaderProgram *shader;
 
@@ -102,9 +109,15 @@ void Setup()
     // attributes in the shader (see examples of this in normalmap.frag)
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
+    
     glLightfv(GL_LIGHT0, GL_SPECULAR,  specularLight);
     glLightfv(GL_LIGHT0, GL_AMBIENT,   ambientLight);
     glLightfv(GL_LIGHT0, GL_DIFFUSE,   diffuseLight);
+    
+    glEnable(GL_LIGHT1);
+    glLightfv(GL_LIGHT1, GL_SPECULAR,  specularLight1);
+    glLightfv(GL_LIGHT1, GL_AMBIENT,   ambientLight1);
+    glLightfv(GL_LIGHT1, GL_DIFFUSE,   diffuseLight1);
 
     // Ditto with accessing material properties in the fragment
     // and vertex shaders.
@@ -171,6 +184,7 @@ void DisplayCallback()
     glRotatef(90.0f, 1, 0, 0);
 
     glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
+    glLightfv(GL_LIGHT1, GL_POSITION, lightPosition1);
 
     // Invoke the shader.  Now OpenGL will call our
     // shader programs on anything we draw.
