@@ -25,20 +25,20 @@ std::string fragmentShader;
 std::string meshOBJ;
 
 // Light source attributes
-static float specularLight[] = {1.00, 1.00, 1.00, 1.0};
-static float ambientLight[]  = {.54, .53, .79, 1.0};
-static float diffuseLight[]  = {.01, .01, .01, 1.0};
+static float specularLight[] = {1.00, 1.00, 1.00, .5};
+static float ambientLight[]  = {.54, .53, .79, .1};
+static float diffuseLight[]  = {.5, .5, .5, .1};
 
 // Light source attributes
-static float specularLight1[] = {1.0f, 0.0f, 0.0f, 1.0f};
-static float ambientLight1[]  = {.2, .2, .2, 1.0};
-static float diffuseLight1[]  = {.75f, .75f, .75f, 1.0f};
+static float specularLight1[] = {1.0f, 0.5f, 0.2f, .5f};
+static float ambientLight1[]  = {.2, .2, .2, .1};
+static float diffuseLight1[]  = {.3f, .3f, .5f, .1f};
 
-float lightPosition[] = {5.0f, 10.0f, 5.0f, 1.0f};
-float lightPosition1[] = {15.0f, 10.0f, -20.0f, 1.0f};
+float lightPosition[] = {5.0f, 10.0f, 5.0f, 2.0f}; // blue light
+float lightPosition1[] = {15.0f, 10.0f, -20.0f, 1.0f}; // green light
 
 // Material color properties
-static float materialSpecular[] = { 0., 0.5, 0., 1.0 };
+static float materialSpecular[] = { 0.01, 0.5, 0.01, 1.0 };
 static float materialAmbient[]  = { 0.75, 0.75, 0.75, 1.0 };
 static float materialDiffuse[]  = { 0.75, 0.75, 0.75, 1.0 };
 static float shininess          =  2.0;  // # between 1 and 128.
@@ -60,7 +60,7 @@ STTriangleMesh* gManualTriangleMesh = 0;
 
 void resetCamera()
 {
-    mCameraTranslation = STVector3(0.f, 1.2f, 14.5f);
+    mCameraTranslation = STVector3(0.f, .9f, 15.5f);
     mCameraAzimuth = 0.f;
     mCameraElevation = 65.0f;
 }
